@@ -1,6 +1,7 @@
 ﻿using Android.App;
 using Android.Content.PM;
 using Android.OS;
+using Android.Views;
 using Prism;
 using Prism.Ioc;
 
@@ -15,9 +16,10 @@ namespace HealthApp.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(bundle);
-
+            Xamarin.FormsMaps.Init(this, bundle);
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App(new AndroidInitializer()));
+            Window.AddFlags(WindowManagerFlags.Fullscreen);
         }
     }
 

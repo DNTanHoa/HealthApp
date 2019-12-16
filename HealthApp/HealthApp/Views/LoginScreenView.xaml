@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="White"
+             xmlns:customEntry="clr-namespace:HealthApp.Custom"
+             xmlns:circleImage="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="HealthApp.Views.LoginScreenView">
+    <Grid>
+        <!--<Image Source="Health.png"
+               Aspect="Fill"
+               Opacity="0.3"></Image>-->
+        <ScrollView BackgroundColor="Transparent">
+            <Grid VerticalOptions="CenterAndExpand"
+                  HorizontalOptions="Fill">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <!--Logo-->
+                <StackLayout Grid.Row="0">
+                    <AbsoluteLayout VerticalOptions="Center"
+                                    HorizontalOptions="Center">
+                        <StackLayout VerticalOptions="Center" 
+                                     HorizontalOptions="Center">
+                            <circleImage:CircleImage Source="Log.png"
+                                         HeightRequest="150"
+                                         WidthRequest="150"></circleImage:CircleImage>
+                            <Label Text="Đăng Nhập"
+                                   TextColor="Navy"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"
+                                   Margin="0,0,0,10"
+                                   FontSize="32"
+                                   FontAttributes="Bold"></Label>
+                        </StackLayout>
+                    </AbsoluteLayout>
+                </StackLayout>
+
+                <!--Input-->
+                <StackLayout Grid.Row="1">
+                    <!--Username-->
+                    <Frame Margin="10,0,10,0"
+                       Padding="10"
+                       BackgroundColor="Transparent"
+                       BorderColor="Gray"
+                       CornerRadius="8">
+                        <FlexLayout Padding="0"
+                                JustifyContent="Center"
+                                AlignItems="Center">
+                            <Image Source="icon_user"
+                               HeightRequest="30"
+                               Margin="0,0,3,0"
+                               WidthRequest="30"></Image>
+                            <customEntry:CustomEntry Placeholder="Tên Đăng Nhập"
+                               TextColor="Black"
+                               PlaceholderColor="Black"              
+                               FlexLayout.Basis="90%"
+                               FontFamily="Tahoma"
+                               FontSize="15"></customEntry:CustomEntry>
+                        </FlexLayout>
+                        <Frame.Style>
+                            <Style TargetType="Frame">
+                                <Style.Triggers>
+                                    <Trigger Property="IsFocused" Value="True" TargetType="Frame">
+                                        <Setter Property="BorderColor" Value="Red"></Setter>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Frame.Style>
+                    </Frame>
+
+                    <Frame Margin="10,05,10,0"
+                       Padding="10"
+                       BackgroundColor="Transparent"
+                       BorderColor="Gray"
+                       CornerRadius="8">
+                        <FlexLayout Padding="0"
+                                JustifyContent="Center"
+                                AlignItems="Center">
+                            <Image Source="icon_key.png"
+                               HeightRequest="30"
+                               Margin="0,0,3,0"
+                               WidthRequest="30"></Image>
+                            <customEntry:CustomEntry Placeholder="Mật Khẩu"
+                               TextColor="Black"
+                               IsPassword="True"
+                               PlaceholderColor="Black"              
+                               FlexLayout.Basis="90%"
+                               FontFamily="Tahoma"
+                               FontSize="15"></customEntry:CustomEntry>
+                        </FlexLayout>
+                        <Frame.Style>
+                            <Style TargetType="Frame">
+                                <Style.Triggers>
+                                    <Trigger Property="IsFocused" Value="True" TargetType="Frame">
+                                        <Setter Property="BorderColor" Value="Red"></Setter>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Frame.Style>
+                    </Frame>
+                </StackLayout>
+
+                <!--Login and Exit-->
+                <FlexLayout Grid.Row="2"
+                        Margin="0,5,0,0">
+                    <Button Text="Đăng Nhập" 
+                        HeightRequest="50"
+                        TextColor="White"
+                        BackgroundColor="Navy"
+                        Margin="10,0,5,0"
+                        CornerRadius="8"
+                        FlexLayout.Basis="50%"
+                        FontSize="16"></Button>
+                    <Button Text="Thoát" 
+                        HeightRequest="50"
+                        TextColor="White"
+                        BackgroundColor="Navy"
+                        Margin="5,0,10,0"
+                        CornerRadius="8"
+                        FlexLayout.Basis="50%"
+                        FontSize="16"></Button>
+                </FlexLayout>
+                <!--Skip or Sign Up-->
+                <StackLayout Grid.Row="3">
+                    <StackLayout HorizontalOptions="CenterAndExpand"
+                                 VerticalOptions="CenterAndExpand"
+                                 Orientation="Horizontal">
+                        <Label Text="Quên Mật Khẩu?"
+                               TextColor="Black"
+                               VerticalTextAlignment="Center"
+                               HorizontalTextAlignment="Center"></Label>
+                        <Label Text="Nhấn Vào Đây"
+                               TextColor="Navy"
+                               FontAttributes="Bold"
+                               FontSize="Medium"></Label>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="Center"
+                                 Orientation="Horizontal">
+                        <Button HeightRequest="50"
+                            WidthRequest="100"
+                            Text="Đăng Ký"
+                            TextColor="Navy"
+                            BackgroundColor="Transparent"
+                            BorderColor="Navy"
+                            CornerRadius="8"
+                            BorderWidth="1"></Button>
+                        <Button HeightRequest="50"
+                            WidthRequest="100"
+                            Text="Để Sau"
+                            TextColor="Navy"
+                            BackgroundColor="Transparent"
+                            BorderColor="Navy"
+                            CornerRadius="8"
+                            BorderWidth="1"></Button>
+                    </StackLayout>
+                </StackLayout>
+                <!--App Description-->
+                <StackLayout Grid.Row="4"
+                             VerticalOptions="EndAndExpand"
+                             HorizontalOptions="Center">
+                    <Label Text="Ứng Dụng Vì Sức Khỏe"
+                           Margin="0,0,0,0"
+                           HorizontalTextAlignment="Center"
+                           TextColor="Navy"></Label>
+                    <StackLayout Orientation="Horizontal" Margin="0,0,0,10">
+                        <Label Text="Copyright © 2020"
+                           HorizontalOptions="Center"
+                           HorizontalTextAlignment="Center"
+                           TextColor="Navy"></Label>
+                        <Label Text="Dương Nguyễn Tấn Hòa"
+                               TextColor="Black"></Label>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+    </Grid>
+</ContentPage>

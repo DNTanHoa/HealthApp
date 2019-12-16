@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:prism="http://prismlibrary.com"
+                  xmlns:local="clr-namespace:HealthApp.Models"
+                  NavigationPage.HasNavigationBar="False"
+                  xmlns:behavior="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
+                  xmlns:page="clr-namespace:HealthApp.Views"
+                  IsPresented="{Binding isMasterPresented, Mode=TwoWay, UpdateSourceEventName=PropertyChanged}"
+                  prism:ViewModelLocator.AutowireViewModel="True"
+                  x:Class="HealthApp.Views.EasternMedicineView">
+
+    <MasterDetailPage.Master>
+        <ContentPage Title="Menu" 
+                     NavigationPage.HasNavigationBar="False">
+            <ContentPage.Content>
+                <Grid HorizontalOptions="FillAndExpand"
+                      RowSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <!--Title and button-->
+                    <StackLayout Grid.Row="0"
+                                 Margin="0"
+                                 Spacing="0"
+                                 Orientation="Horizontal"
+                                 BackgroundColor="#FFCC00">
+                        <Label Text="Đông Y"
+                               TextColor="White"
+                               FontSize="20"
+                               VerticalOptions="Center"
+                               FontAttributes="Bold"
+                               Margin="5"></Label>
+                        <Image Source="icon_menu.png"
+                               HeightRequest="40"
+                               WidthRequest="40"
+                               VerticalOptions="Center"
+                               BackgroundColor="Transparent"
+                               HorizontalOptions="EndAndExpand"
+                               Margin="5">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding HideMasterContent}"></TapGestureRecognizer>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </StackLayout>
+                    <!--Image-->
+                    <Image Aspect="AspectFill"
+                           Grid.Row="1"
+                           Margin="0"
+                           VerticalOptions="FillAndExpand"
+                           HorizontalOptions="FillAndExpand"
+                           Source="DongY.jpg"></Image>
+                    <!--Menu-->
+                    <ListView Grid.Row="2"
+                              SelectedItem="{Binding selectedItem}">
+                        <ListView.ItemsSource>
+                            <x:Array Type="{x:Type local:EasternMedicineItem}">
+                                <local:EasternMedicineItem title="Lý Thuyết" icon="icon_theory.png" page="{x:Type page:EasternMedicineTheoryView}"/>
+                                <local:EasternMedicineItem title="Bài Thuốc" icon="icon_tree.png" page="{x:Type page:EasterMedicinePaperView}"/>
+                                <local:EasternMedicineItem title="Tin Tức" icon="icon_new.png" page="{x:Type page:EasternMedicineNewsView}"/>
+                                <local:EasternMedicineItem title="Khí Công" icon="icon_people.png" page="{x:Type page:EasterMedicineZenView}"/>
+                                <local:EasternMedicineItem title="Danh Y" icon="icon_danhy.png" page="{x:Type page:EasterMedicineDoctorView}"/>
+                            </x:Array>
+                        </ListView.ItemsSource>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <FlexLayout AlignItems="Center">
+                                        <Image Source="{Binding icon}"
+                                               HeightRequest="30"
+                                               Margin="5"
+                                               WidthRequest="30"
+                                               Aspect="AspectFill"></Image>
+                                        <Label Text="{Binding title}"
+                                               FontSize="14"
+                                               Margin="5"
+                                               TextColor="#9B8014"></Label>
+                                    </FlexLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                        <ListView.Behaviors>
+                            <behavior:EventToCommandBehavior EventName="ItemTapped"
+                                                             Command="{Binding ShowSelectedDetailPage}"></behavior:EventToCommandBehavior>
+                        </ListView.Behaviors>
+                    </ListView>
+                    <!--Content-->
+                    <StackLayout Grid.Row="3"
+                                 VerticalOptions="EndAndExpand"
+                                 Margin="0,0,0,5">
+                        <Label Text="Bế Tinh, Dưỡng Khí, Tồn Thần"
+                               Margin="0,0,0,0"
+                               HorizontalTextAlignment="Center"
+                               TextColor="#9B8014"></Label>
+                        <Label Text="Thanh Tâm, Quả Dục, Thủ Chân, Luyện Hình"
+                               Margin="0,0,0,10"
+                               HorizontalTextAlignment="Center"
+                               TextColor="#9B8014"></Label>
+                        <Label Text="Ứng Dụng Vì Sức Khỏe"
+                               Margin="0,0,0,0"
+                               HorizontalTextAlignment="Center"
+                               TextColor="Navy"></Label>
+                        <StackLayout Orientation="Horizontal" 
+                                     HorizontalOptions="Center" 
+                                     Margin="0,0,0,10">
+                            <Label Text="Copyright © 2020"
+                                   HorizontalOptions="Center"
+                                   HorizontalTextAlignment="Center"
+                                   TextColor="#9B8014"></Label>
+                            <Label Text="Dương Nguyễn Tấn Hòa"
+                                   TextColor="Black"></Label>
+                        </StackLayout>
+                    </StackLayout>
+                </Grid>
+            </ContentPage.Content>
+        </ContentPage>
+    </MasterDetailPage.Master>
+
+    <MasterDetailPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <page:EasternMedicineTheoryView></page:EasternMedicineTheoryView>
+            </x:Arguments>
+        </NavigationPage>
+    </MasterDetailPage.Detail>
+    
+</MasterDetailPage>

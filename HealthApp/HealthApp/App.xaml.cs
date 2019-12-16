@@ -1,7 +1,7 @@
-﻿using Prism;
-using Prism.Ioc;
-using HealthApp.ViewModels;
+﻿using HealthApp.ViewModels;
 using HealthApp.Views;
+using Prism;
+using Prism.Ioc;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -23,7 +23,7 @@ namespace HealthApp
         {
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("NavigationPage/MainPage");
+            await NavigationService.NavigateAsync("NavigationPage/MainView");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -31,6 +31,18 @@ namespace HealthApp
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<SplashScreenView, SplashScreenViewViewModel>();
+            containerRegistry.RegisterForNavigation<MapScreenView, MapScreenViewViewModel>();
+            containerRegistry.RegisterForNavigation<HospitalListView, HospitalListViewViewModel>();
+            containerRegistry.RegisterForNavigation<LoginScreenView, LoginScreenViewViewModel>();
+            containerRegistry.RegisterForNavigation<SignupScreenView, SignupScreenViewViewModel>();
+            containerRegistry.RegisterForNavigation<EasternMedicineView, EasternMedicineViewViewModel>();
+            containerRegistry.RegisterForNavigation<EasternMedicineTheoryView, EasternMedicineTheoryViewViewModel>();
+            containerRegistry.RegisterForNavigation<EasterMedicinePaperView, EasterMedicinePaperViewViewModel>();
+            containerRegistry.RegisterForNavigation<EasternMedicineNewsView, EasternMedicineNewsViewViewModel>();
+            containerRegistry.RegisterForNavigation<EasterMedicineZenView, EasterMedicineZenViewViewModel>();
+            containerRegistry.RegisterForNavigation<EasterMedicineDoctorView, EasterMedicineDoctorViewViewModel>();
+            containerRegistry.RegisterForNavigation<EasternMedicineBaseContent, EasternMedicineBaseContentViewModel>();
+            containerRegistry.RegisterForNavigation<MainView, MainViewViewModel>();
         }
     }
 }

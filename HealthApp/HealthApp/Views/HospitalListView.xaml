@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="White"
+             xmlns:customEntry="clr-namespace:HealthApp.Custom"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="HealthApp.Views.HospitalListView">
+    <Grid VerticalOptions="FillAndExpand"
+          HorizontalOptions="FillAndExpand"
+          RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackLayout BackgroundColor="#007F00"
+                     Grid.Row="0"
+                     Orientation="Horizontal">
+            <Image Source="icon_hospital.png"
+                   HeightRequest="40"
+                   WidthRequest="40"
+                   VerticalOptions="Center"
+                   BackgroundColor="Transparent"
+                   Margin="5">
+            </Image>
+            <Label Text="Bệnh Viện"
+                   TextColor="White"
+                   FontSize="20"
+                   VerticalOptions="Center"
+                   FontAttributes="Bold"
+                   Margin="0,5,5,5"></Label>
+        </StackLayout>
+        <StackLayout Grid.Row="1" 
+                     Margin="0,5,0,0">
+            <FlexLayout JustifyContent="SpaceAround"
+                        AlignItems="Center">
+                <Frame Margin="05,0,05,0"
+                       Padding="0"
+                       FlexLayout.Basis="80%"
+                       BackgroundColor="Transparent"
+                       BorderColor="Gray"
+                       CornerRadius="8">
+                    <FlexLayout Padding="0"
+                                JustifyContent="Center"
+                                AlignItems="Center">
+                        <Image Source="icon_search"
+                               HeightRequest="30"
+                               Margin="5,0,3,0"
+                               WidthRequest="30"></Image>
+                        <customEntry:CustomEntry Placeholder="Tìm Thông Tin"
+                                                 TextColor="Black"
+                                                 PlaceholderColor="Black"              
+                                                 FlexLayout.Basis="90%"
+                                                 FontFamily="Tahoma"
+                                                 FontSize="15"></customEntry:CustomEntry>
+                    </FlexLayout>
+                </Frame>
+                <Button HeightRequest="60"
+                        WidthRequest="80"
+                        Text="Tìm"
+                        Margin="0,0,5,0"
+                        TextColor="#007F00"
+                        BackgroundColor="Transparent"
+                        BorderColor="#007F00"
+                        CornerRadius="8"
+                        BorderWidth="1"></Button>
+            </FlexLayout>
+        </StackLayout>
+        <StackLayout Grid.Row="2">
+            <ScrollView>
+                <ListView ItemsSource="{Binding hospitals, Mode=TwoWay, UpdateSourceEventName=PropertyChanged}"
+                          HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Padding="5">
+                                    <!--Icon and Hospital Name-->
+                                    <FlexLayout Margin="0,0,3,0"
+                                                AlignItems="Center">
+                                        <Image Source="hospital.png"
+                                               HeightRequest="50"
+                                               WidthRequest="50"></Image>
+                                        <Label Text="{Binding Name}"
+                                               FontSize="Default"
+                                               FontAttributes="Bold"></Label>
+                                    </FlexLayout>
+                                    <!--Address-->
+                                    <Label Text="{Binding Address}"></Label>
+                                    <StackLayout Orientation="Horizontal">
+                                        <!--Rating-->
+                                        
+                                        <!--Detail and Direct-->
+                                        <StackLayout HorizontalOptions="EndAndExpand"
+                                                 Orientation="Horizontal"
+                                                 Margin="0,3,5,3">
+                                            <Label Text="Chi Tiết"
+                                               FontAttributes="Bold"
+                                               TextColor="#007F00"
+                                               Margin="0,0,5,0"
+                                               FontSize="15"></Label>
+                                            <Label Text="Tìm Đường"
+                                               FontAttributes="Bold"
+                                               TextColor="#007F00"
+                                               Margin="0,0,5,0"
+                                               FontSize="15"></Label>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+        </StackLayout>
+    </Grid>
+</ContentPage>
