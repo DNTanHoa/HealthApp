@@ -23,7 +23,7 @@ namespace HealthApp
         {
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("NavigationPage/MainView");
+            await NavigationService.NavigateAsync("NavigationPage/SplashScreenView");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)

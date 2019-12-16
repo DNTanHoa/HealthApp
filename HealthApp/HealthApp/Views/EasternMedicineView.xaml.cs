@@ -9,6 +9,7 @@ namespace HealthApp.Views
         {
             InitializeComponent();
             instance = this;
+            this.IsPresented = true;
         }
 
         public static EasternMedicineView instance;

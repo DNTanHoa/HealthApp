@@ -58,6 +58,7 @@
                                WidthRequest="30"></Image>
                             <customEntry:CustomEntry Placeholder="Tên Đăng Nhập"
                                TextColor="Black"
+                               Text="{Binding username, Mode=TwoWay, UpdateSourceEventName=PropertyChanged}"
                                PlaceholderColor="Black"              
                                FlexLayout.Basis="90%"
                                FontFamily="Tahoma"
@@ -89,6 +90,7 @@
                             <customEntry:CustomEntry Placeholder="Mật Khẩu"
                                TextColor="Black"
                                IsPassword="True"
+                               Text="{Binding password, Mode=TwoWay, UpdateSourceEventName=PropertyChanged}"
                                PlaceholderColor="Black"              
                                FlexLayout.Basis="90%"
                                FontFamily="Tahoma"
@@ -111,6 +113,7 @@
                         Margin="0,5,0,0">
                     <Button Text="Đăng Nhập" 
                         HeightRequest="50"
+                        Command="{Binding LoginCommand}"
                         TextColor="White"
                         BackgroundColor="Navy"
                         Margin="10,0,5,0"
