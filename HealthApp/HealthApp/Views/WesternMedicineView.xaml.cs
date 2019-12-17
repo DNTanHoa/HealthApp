@@ -7,6 +7,13 @@ namespace HealthApp.Views
         public WesternMedicineView()
         {
             InitializeComponent();
+
+            instance = this;
+            WesternMedicineFirstAidView detail = new WesternMedicineFirstAidView();
+            detail.master = this;
+            Detail = new NavigationPage((Page)detail);
         }
+
+        public static WesternMedicineView instance;
     }
 }

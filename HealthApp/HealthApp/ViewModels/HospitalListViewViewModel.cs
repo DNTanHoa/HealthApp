@@ -15,6 +15,7 @@ namespace HealthApp.ViewModels
         public HospitalListViewViewModel(INavigationService navigationService) : base(navigationService)
         {
             LoadHospitalData = new DelegateCommand(LoadHospitalDataExecute);
+            FindRoute = new DelegateCommand(FindRouteExecute);
             LoadHospitalDataExecute();
         }
 
@@ -64,6 +65,13 @@ namespace HealthApp.ViewModels
                 Address = "280 Điện Biên Phủ, P.7, Q.3, Thành Phố Hồ Chí Minh"
             });
 
+        }
+
+        public DelegateCommand FindRoute { get; }
+        public void FindRouteExecute()
+        {
+            //TODO: get hospital location information and bind to Map View
+            NavigationService.NavigateAsync("MapScreenView");
         }
     }
 }

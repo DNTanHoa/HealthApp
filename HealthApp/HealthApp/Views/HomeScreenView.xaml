@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             xmlns:circleImage="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="White"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="HealthApp.Views.HomeScreenView">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <!--Greeting-->
+        <StackLayout Grid.Row="0"
+                     VerticalOptions="CenterAndExpand"
+                     HorizontalOptions="CenterAndExpand">
+            <circleImage:CircleImage Source="user_icon.png"
+                                     HeightRequest="180"
+                                     WidthRequest="180"></circleImage:CircleImage>
+            <Label Text="Xin Chào Khách"
+                   Margin="0,5,0,0"
+                   TextColor="Navy"
+                   FontSize="Large"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="Center"
+                   FontAttributes="Bold"></Label>
+        </StackLayout>
+        <!--Function-->
+        <StackLayout Grid.Row="1"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center">
+            <StackLayout Orientation="Horizontal"
+                         HorizontalOptions="CenterAndExpand">
+                <Button HeightRequest="150"
+                        WidthRequest="150"
+                        Margin="0,0,10,0"
+                        HorizontalOptions="Center"
+                        CornerRadius="75"
+                        TextColor="White"
+                        BackgroundColor="#FF6666"
+                        Text="Sơ Cứu"></Button>
+                <Button HeightRequest="150"
+                        WidthRequest="150"
+                        Margin="10,0,0,0"
+                        HorizontalOptions="Center"
+                        CornerRadius="75"
+                        TextColor="White"
+                        BackgroundColor="#006666"
+                        Text="Bài Thuốc"></Button>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal"
+                         HorizontalOptions="Center">
+                <Button HeightRequest="150"
+                        WidthRequest="150"
+                        HorizontalOptions="Center"
+                        CornerRadius="75"
+                        TextColor="White"
+                        BackgroundColor="#CC9966"
+                        Text="Bệnh Lý"></Button>
+            </StackLayout>
+        </StackLayout>
+        <!--Exit and Infor-->
+        <StackLayout Grid.Row="2"
+                     Orientation="Horizontal">
+            <StackLayout Orientation="Horizontal"
+                         Margin="0,05,0,10"
+                         HorizontalOptions="StartAndExpand">
+                <Image Source="icon_about.png"
+                       HeightRequest="40"
+                       VerticalOptions="CenterAndExpand"
+                       WidthRequest="40"
+                       Margin="3,0,0,0"></Image>
+                <Label Text="Thông Tin"
+                       TextColor="#4B47A0"
+                       VerticalOptions="CenterAndExpand"></Label>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal"
+                         Margin="0,05,0,10"
+                         HorizontalOptions="EndAndExpand">
+                <Label Text="Thoát"
+                       TextColor="#4B47A0"
+                       VerticalOptions="CenterAndExpand"></Label>
+                <Image Source="icons_shutdown.png"
+                       HeightRequest="40"
+                       VerticalOptions="CenterAndExpand"
+                       WidthRequest="40"
+                       Margin="0,0,3,0"></Image>
+            </StackLayout>
+        </StackLayout>
+    </Grid>
+</ContentPage>

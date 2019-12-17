@@ -9,12 +9,20 @@
             prism:ViewModelLocator.AutowireViewModel="True"
             x:Class="HealthApp.Views.MainView">
 
-    <NavigationPage Icon="icon_home.png"
-                    Title="Bệnh Viện">
+    <NavigationPage Icon="icon_doctor.png"
+                    Title="Trang Chủ">
         <x:Arguments>
-            <local:HospitalListView></local:HospitalListView>
+            <local:HomeScreenView></local:HomeScreenView>
         </x:Arguments>
     </NavigationPage>
+    
+    <NavigationPage Icon="icon_doctor.png"
+                    Title="Tây Y">
+        <x:Arguments>
+            <local:WesternMedicineView></local:WesternMedicineView>
+        </x:Arguments>
+    </NavigationPage>
+    
     
     <NavigationPage Icon="icon_natural.png"
                     Title="Đông Y">
@@ -22,5 +30,12 @@
             <local:EasternMedicineView></local:EasternMedicineView>
         </x:Arguments>
     </NavigationPage>
-
+    
+    <NavigationPage Icon="icon_home.png"
+                    Title="Bệnh Viện">
+        <x:Arguments>
+            <local:HospitalListView></local:HospitalListView>
+        </x:Arguments>
+    </NavigationPage>
+    
 </TabbedPage>

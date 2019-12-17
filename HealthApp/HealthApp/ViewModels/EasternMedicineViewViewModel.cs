@@ -28,7 +28,7 @@ namespace HealthApp.ViewModels
             }
         }
 
-        private bool _isMasterPresented = true;
+        private bool _isMasterPresented;
         public bool isMasterPresented
         {
             get => _isMasterPresented;

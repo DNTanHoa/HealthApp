@@ -121,9 +121,9 @@
 
     <MasterDetailPage.Detail>
         <NavigationPage>
-            <x:Arguments>
+            <!--<x:Arguments>
                 <page:EasternMedicineTheoryView></page:EasternMedicineTheoryView>
-            </x:Arguments>
+            </x:Arguments>-->
         </NavigationPage>
     </MasterDetailPage.Detail>
     

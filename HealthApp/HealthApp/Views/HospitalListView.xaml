@@ -4,6 +4,8 @@
              xmlns:prism="http://prismlibrary.com"
              NavigationPage.HasNavigationBar="False"
              BackgroundColor="White"
+             x:Name="HospitalPage"
+             xmlns:behavior="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
              xmlns:customEntry="clr-namespace:HealthApp.Custom"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="HealthApp.Views.HospitalListView">
@@ -94,18 +96,23 @@
                                         
                                         <!--Detail and Direct-->
                                         <StackLayout HorizontalOptions="EndAndExpand"
-                                                 Orientation="Horizontal"
-                                                 Margin="0,3,5,3">
+                                                     Orientation="Horizontal"
+                                                     Margin="0,3,5,3">
                                             <Label Text="Chi Tiết"
-                                               FontAttributes="Bold"
-                                               TextColor="#007F00"
-                                               Margin="0,0,5,0"
-                                               FontSize="15"></Label>
+                                                   FontAttributes="Bold"
+                                                   TextColor="#007F00"
+                                                   Margin="0,0,5,0"
+                                                   FontSize="15"></Label>
                                             <Label Text="Tìm Đường"
-                                               FontAttributes="Bold"
-                                               TextColor="#007F00"
-                                               Margin="0,0,5,0"
-                                               FontSize="15"></Label>
+                                                   FontAttributes="Bold"
+                                                   BackgroundColor="Transparent"
+                                                   TextColor="#007F00"
+                                                   Margin="0,0,5,0"
+                                                   FontSize="15">
+                                                <Label.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding Path=BindingContext.FindRoute, Source={x:Reference HospitalPage}}"></TapGestureRecognizer>
+                                                </Label.GestureRecognizers>
+                                            </Label>
                                         </StackLayout>
                                     </StackLayout>
                                 </StackLayout>

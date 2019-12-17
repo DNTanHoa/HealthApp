@@ -20,14 +20,9 @@ namespace HealthApp.Views
 
         private void ShowMaster(object sender, System.EventArgs e)
         {
-             if (master != null)
+            if (master != null)
             {
                 master.IsPresented = true;
-            }
-            else
-            {
-                master = new EasternMedicineView() as MasterDetailPage;
-                this.master.IsPresented = true;
             }
         }
     }
