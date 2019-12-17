@@ -9,7 +9,18 @@
             prism:ViewModelLocator.AutowireViewModel="True"
             x:Class="HealthApp.Views.MainView">
 
-    <local:EasternMedicineView Icon="icon_natural.png"
-                               Title="Đông Y"></local:EasternMedicineView>
+    <NavigationPage Icon="icon_home.png"
+                    Title="Bệnh Viện">
+        <x:Arguments>
+            <local:HospitalListView></local:HospitalListView>
+        </x:Arguments>
+    </NavigationPage>
     
+    <NavigationPage Icon="icon_natural.png"
+                    Title="Đông Y">
+        <x:Arguments>
+            <local:EasternMedicineView></local:EasternMedicineView>
+        </x:Arguments>
+    </NavigationPage>
+
 </TabbedPage>

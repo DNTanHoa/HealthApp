@@ -28,7 +28,7 @@ namespace HealthApp.ViewModels
             }
         }
 
-        private bool _isMasterPresented;
+        private bool _isMasterPresented = true;
         public bool isMasterPresented
         {
             get => _isMasterPresented;
@@ -55,6 +55,7 @@ namespace HealthApp.ViewModels
                 await NavigationService.NavigateAsync(selectedItem.page.Name);
                 this.selectedItem = null;
             }
+            
         }
 
     }

@@ -1,4 +1,5 @@
-﻿using Prism.Commands;
+﻿using HealthApp.Views;
+using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
 using System;
@@ -33,6 +34,12 @@ namespace HealthApp.ViewModels
             if(this.master != null)
             {
                 this.master.IsPresented = true;
+            }
+            else
+            {
+                this.master = new EasternMedicineView() as MasterDetailPage;
+                this.master.IsPresented = true;
+                NavigationService.NavigateAsync(this.master.GetType().Name);
             }
         }
 

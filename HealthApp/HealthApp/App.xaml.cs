@@ -23,7 +23,7 @@ namespace HealthApp
         {
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("NavigationPage/SplashScreenView");
+            await NavigationService.NavigateAsync("NavigationPage/LoginScreenView");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -43,6 +43,8 @@ namespace HealthApp
             containerRegistry.RegisterForNavigation<EasterMedicineDoctorView, EasterMedicineDoctorViewViewModel>();
             containerRegistry.RegisterForNavigation<EasternMedicineBaseContent, EasternMedicineBaseContentViewModel>();
             containerRegistry.RegisterForNavigation<MainView, MainViewViewModel>();
+            containerRegistry.RegisterForNavigation<WesternMedicineBaseContent, WesternMedicineBaseContentViewModel>();
+            containerRegistry.RegisterForNavigation<WesternMedicineView, WesternMedicineViewViewModel>();
         }
     }
 }
