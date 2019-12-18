@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>HealthAppDatabase.Module.Win</RootNamespace>
     <AssemblyName>HealthAppDatabase.Module.Win</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -38,49 +39,49 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.Data.v19.1">
+    <Reference Include="DevExpress.Data.v19.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.ExpressApp.v19.1">
+    <Reference Include="DevExpress.ExpressApp.v19.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.ExpressApp.Win.v19.1">
+    <Reference Include="DevExpress.ExpressApp.Win.v19.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.ExpressApp.Xpo.v19.1">
+    <Reference Include="DevExpress.ExpressApp.Xpo.v19.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.Persistent.Base.v19.1">
+    <Reference Include="DevExpress.Persistent.Base.v19.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.Persistent.BaseImpl.v19.1">
+    <Reference Include="DevExpress.Persistent.BaseImpl.v19.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.Printing.v19.1.Core">
+    <Reference Include="DevExpress.Printing.v19.2.Core">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.Utils.v19.1">
+    <Reference Include="DevExpress.Utils.v19.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.Xpo.v19.1">
+    <Reference Include="DevExpress.Xpo.v19.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.XtraBars.v19.1">
+    <Reference Include="DevExpress.XtraBars.v19.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.XtraEditors.v19.1">
+    <Reference Include="DevExpress.XtraEditors.v19.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.XtraGrid.v19.1">
+    <Reference Include="DevExpress.XtraGrid.v19.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.XtraLayout.v19.1">
+    <Reference Include="DevExpress.XtraLayout.v19.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.XtraNavBar.v19.1">
+    <Reference Include="DevExpress.XtraNavBar.v19.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.XtraPrinting.v19.1">
+    <Reference Include="DevExpress.XtraPrinting.v19.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="System">

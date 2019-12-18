@@ -4,13 +4,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D05D93DF-312D-4D4E-B980-726871EC7833}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <ProjectGuid>{7964F87D-BC5D-4C4E-8B2F-71E89739AA97}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HealthAppDatabase.Win</RootNamespace>
-    <AssemblyName>HealthAppDatabase.Win</AssemblyName>
+    <RootNamespace>HealthAppDatabase.Module.Win</RootNamespace>
+    <AssemblyName>HealthAppDatabase.Module.Win</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <ApplicationIcon>ExpressApp.ico</ApplicationIcon>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -40,97 +39,50 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.BonusSkins.v19.2">
+    <Reference Include="DevExpress.Data.v19.1">
       <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
     </Reference>
-    <Reference Include="DevExpress.Data.v19.2">
+    <Reference Include="DevExpress.ExpressApp.v19.1">
       <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
     </Reference>
-    <Reference Include="DevExpress.ExpressApp.Images.v19.2">
+    <Reference Include="DevExpress.ExpressApp.Win.v19.1">
       <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
     </Reference>
-    <Reference Include="DevExpress.ExpressApp.v19.2">
+    <Reference Include="DevExpress.ExpressApp.Xpo.v19.1">
       <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
     </Reference>
-    <Reference Include="DevExpress.ExpressApp.Win.v19.2">
+    <Reference Include="DevExpress.Persistent.Base.v19.1">
       <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
     </Reference>
-    <Reference Include="DevExpress.ExpressApp.Xpo.v19.2">
+    <Reference Include="DevExpress.Persistent.BaseImpl.v19.1">
       <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
     </Reference>
-    <Reference Include="DevExpress.Office.v19.2.Core">
+    <Reference Include="DevExpress.Printing.v19.1.Core">
       <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
     </Reference>
-    <Reference Include="DevExpress.Persistent.Base.v19.2">
+    <Reference Include="DevExpress.Utils.v19.1">
       <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
     </Reference>
-    <Reference Include="DevExpress.Persistent.BaseImpl.v19.2">
+    <Reference Include="DevExpress.Xpo.v19.1">
       <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
     </Reference>
-    <Reference Include="DevExpress.Printing.v19.2.Core">
+    <Reference Include="DevExpress.XtraBars.v19.1">
       <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
     </Reference>
-    <Reference Include="DevExpress.RichEdit.v19.2.Core">
+    <Reference Include="DevExpress.XtraEditors.v19.1">
       <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
     </Reference>
-    <Reference Include="DevExpress.RichEdit.v19.2.Export">
+    <Reference Include="DevExpress.XtraGrid.v19.1">
       <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
     </Reference>
-    <Reference Include="DevExpress.Utils.v19.2">
+    <Reference Include="DevExpress.XtraLayout.v19.1">
       <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
     </Reference>
-    <Reference Include="DevExpress.Xpo.v19.2">
+    <Reference Include="DevExpress.XtraNavBar.v19.1">
       <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
     </Reference>
-    <Reference Include="DevExpress.XtraBars.v19.2">
+    <Reference Include="DevExpress.XtraPrinting.v19.1">
       <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="DevExpress.XtraEditors.v19.2">
-      <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="DevExpress.XtraGrid.v19.2">
-      <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="DevExpress.XtraLayout.v19.2">
-      <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="DevExpress.XtraNavBar.v19.2">
-      <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="DevExpress.XtraPrinting.v19.2">
-      <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="DevExpress.XtraRichEdit.v19.2">
-      <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="DevExpress.XtraTreeList.v19.2">
-      <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="DevExpress.XtraVerticalGrid.v19.2">
-      <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
     </Reference>
     <Reference Include="System">
       <Name>System</Name>
@@ -157,40 +109,33 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ExpressApp.ico" />
-    <None Include="ReadMe.txt" />
-    <None Include="Images\ReadMe.txt" />
-    <None Include="App.config" />
-    <Content Include="Model.xafml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WinApplication.cs">
+    <Compile Include="WinModule.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="WinApplication.Designer.cs">
-      <DependentUpon>WinApplication.cs</DependentUpon>
+    <Compile Include="WinModule.Designer.cs">
+      <DependentUpon>WinModule.cs</DependentUpon>
     </Compile>
-    <Compile Include="XafSplashScreen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="XafSplashScreen.Designer.cs">
-      <DependentUpon>XafSplashScreen.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="XafSplashScreen.resx">
-      <DependentUpon>XafSplashScreen.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HealthAppDatabase.Module.Win\HealthAppDatabase.Module.Win.csproj">
-      <Project>{7964F87D-BC5D-4C4E-8B2F-71E89739AA97}</Project>
-      <Name>HealthAppDatabase.Module.Win</Name>
-      <Private>True</Private>
-    </ProjectReference>
+    <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\ExpressAppLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Controllers\ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Editors\ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\HealthAppDatabase.Module\HealthAppDatabase.Module.csproj">
       <Project>{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}</Project>
       <Name>HealthAppDatabase.Module</Name>
