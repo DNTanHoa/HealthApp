@@ -1,23 +1,25 @@
 ﻿using HealthApp.Models;
+using HealthApp.Service;
+using Prism;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace HealthApp.ViewModels
 {
-    public class HospitalListViewViewModel : ViewModelBase
+    public class HospitalListViewViewModel : ViewModelBase, IActiveAware
     {
         public HospitalListViewViewModel(INavigationService navigationService) : base(navigationService)
         {
-            LoadHospitalData = new DelegateCommand(LoadHospitalDataExecute);
+            LoadHospitalData = new DelegateCommand(async() => await LoadHospitalDataExecute());
             FindRoute = new DelegateCommand(FindRouteExecute);
-            LoadHospitalDataExecute();
+            service = new HospitalService();
         }
+
+        public HospitalService service;
 
         private List<Hospital> _hospitals = new List<Hospital>();
         public List<Hospital> hospitals
@@ -31,40 +33,9 @@ namespace HealthApp.ViewModels
         }
 
         public DelegateCommand LoadHospitalData { get; }
-        public void LoadHospitalDataExecute()
+        public async Task LoadHospitalDataExecute()
         {
-            //TODO: load hospistal  data from database via API
-
-            this.hospitals.Add(new Hospital
-            {
-                Name = "Bệnh Viện Y Học Cổ Truyền",
-                Address = "179 Nam Kỳ Khởi Nghĩa, P.7, Q.3, Thành Phố Hồ Chí Minh"
-            });
-
-            this.hospitals.Add(new Hospital
-            {
-                Name = "Bệnh Viện Chấn Thương Chỉnh Hình",
-                Address = "929 Trần Hưng Đạo, Phường 1, Quận 5, Thành Phố Hồ Chí Minh"
-            });
-
-            this.hospitals.Add(new Hospital
-            {
-                Name = "Bệnh Viện Nhiệt Đới",
-                Address = "190 Hàm Tử, Phường 1, Quận 5, Thành Phố Hồ Chí Minh"
-            });
-
-            this.hospitals.Add(new Hospital
-            {
-                Name = "Bệnh Viện Da Liễu",
-                Address = "2 Nguyễn Thông, Phường 6, Quận 3, Thành Phố Hồ Chính Minh"
-            });
-
-            this.hospitals.Add(new Hospital
-            {
-                Name = "Bệnh Viện Mắt",
-                Address = "280 Điện Biên Phủ, P.7, Q.3, Thành Phố Hồ Chí Minh"
-            });
-
+            this.hospitals = await service.RefreshDataAsync();
         }
 
         public DelegateCommand FindRoute { get; }
@@ -72,6 +43,24 @@ namespace HealthApp.ViewModels
         {
             //TODO: get hospital location information and bind to Map View
             NavigationService.NavigateAsync("MapScreenView");
+        }
+
+        public event EventHandler IsActiveChanged;
+
+        private bool _isActive;
+        public bool IsActive
+        {
+            get { return _isActive; }
+            set { SetProperty(ref _isActive, value, RaiseIsActiveChanged); }
+        }
+
+        protected virtual void RaiseIsActiveChanged()
+        {
+            IsActiveChanged?.Invoke(this, EventArgs.Empty);
+            if(this.IsActive)
+            {
+                LoadHospitalDataExecute().GetAwaiter();
+            }
         }
     }
 }
