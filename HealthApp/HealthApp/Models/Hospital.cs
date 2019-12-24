@@ -11,7 +11,5 @@ namespace HealthApp.Models
         public string Code { get; set; }
 
         public string Address { get; set; }
-
-        public decimal rate { get; set; }
     }
 }

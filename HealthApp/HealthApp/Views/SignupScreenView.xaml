@@ -61,6 +61,7 @@
                                    WidthRequest="30"></Image>
                             <customEntry:CustomEntry Placeholder="Họ Và Tên"
                                                      TextColor="Black"
+                                                     Text="{Binding fullName}"
                                                      PlaceholderColor="Black"              
                                                      FlexLayout.Basis="90%"
                                                      FontFamily="Tahoma"
@@ -91,6 +92,7 @@
                                    WidthRequest="30"></Image>
                             <customEntry:CustomEntry Placeholder="Email"
                                                      TextColor="Black"
+                                                     Text="{Binding email}"
                                                      PlaceholderColor="Black"              
                                                      FlexLayout.Basis="90%"
                                                      FontFamily="Tahoma"
@@ -120,11 +122,12 @@
                                Margin="0,0,3,0"
                                WidthRequest="30"></Image>
                             <customEntry:CustomEntry Placeholder="Tên Đăng Nhập"
-                               TextColor="Black"
-                               PlaceholderColor="Black"              
-                               FlexLayout.Basis="90%"
-                               FontFamily="Tahoma"
-                               FontSize="15"></customEntry:CustomEntry>
+                                                     TextColor="Black"
+                                                     Text="{Binding username}"
+                                                     PlaceholderColor="Black"              
+                                                     FlexLayout.Basis="90%"
+                                                     FontFamily="Tahoma"
+                                                     FontSize="15"></customEntry:CustomEntry>
                         </FlexLayout>
                         <Frame.Style>
                             <Style TargetType="Frame">
@@ -151,6 +154,7 @@
                                WidthRequest="30"></Image>
                             <customEntry:CustomEntry Placeholder="Mật Khẩu"
                                                      TextColor="Black"
+                                                     Text="{Binding password}"
                                                      IsPassword="True"
                                                      PlaceholderColor="Black"              
                                                      FlexLayout.Basis="90%"
@@ -177,6 +181,7 @@
                             TextColor="White"
                             BackgroundColor="Navy"
                             Margin="10,0,5,0"
+                            Command="{Binding RegisterCommand}"
                             CornerRadius="8"
                             FlexLayout.Basis="50%"
                             FontSize="16"></Button>
