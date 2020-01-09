@@ -42,12 +42,12 @@ namespace HealthAppDatabase.Module.BusinessObjects
             set => SetPropertyValue(nameof(fullName), ref _fullName, value);
         }
 
-        private string _phone;
-        [XafDisplayName("Điện Thoại")]
-        public string phone
+        private string _email;
+        [XafDisplayName("Email")]
+        public string email
         {
-            get => _phone;
-            set => SetPropertyValue(nameof(phone), ref _phone, value);
+            get => _email;
+            set => SetPropertyValue(nameof(email), ref _email, value);
         }
 
     }

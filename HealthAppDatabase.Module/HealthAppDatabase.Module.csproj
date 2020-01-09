@@ -73,6 +73,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessObjects\Hospitals.cs" />
+    <Compile Include="BusinessObjects\Post.cs" />
+    <Compile Include="BusinessObjects\PostCategory.cs" />
+    <Compile Include="BusinessObjects\PostContent.cs" />
+    <Compile Include="BusinessObjects\Regions.cs" />
     <Compile Include="BusinessObjects\SystemRoles.cs" />
     <Compile Include="BusinessObjects\SystemUsers.cs" />
     <Compile Include="DatabaseUpdate\Updater.cs" />

@@ -40,5 +40,24 @@ namespace HealthAppDatabase.Module.BusinessObjects
             get => _phone;
             set => SetPropertyValue(nameof(phone), ref _phone, value);
         }
+
+        #region Position
+
+        private double _longitude;
+        [XafDisplayName("Kinh Độ")]
+        public double longitude
+        {
+            get => _longitude;
+            set => SetPropertyValue(nameof(longitude), ref _longitude, value);
+        }
+
+        private double _latitude;
+        [XafDisplayName("Vĩ Độ")]
+        public double latitude
+        {
+            get => _latitude;
+            set => SetPropertyValue(nameof(latitude), ref _latitude, value);
+        }
+        #endregion
     }
 }
