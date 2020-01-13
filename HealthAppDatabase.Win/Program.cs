@@ -7,6 +7,9 @@ using DevExpress.ExpressApp.Security;
 using DevExpress.ExpressApp.Win;
 using DevExpress.Persistent.Base;
 using DevExpress.Persistent.BaseImpl;
+using DevExpress.Xpo;
+using DevExpress.Xpo.DB;
+using DevExpress.Xpo.Providers;
 using DevExpress.XtraEditors;
 
 namespace HealthAppDatabase.Win {
@@ -39,7 +42,7 @@ namespace HealthAppDatabase.Win {
             }
 #endif
 #if DEBUG
-            if(System.Diagnostics.Debugger.IsAttached && winApplication.CheckCompatibilityType == CheckCompatibilityType.DatabaseSchema) {
+            if (System.Diagnostics.Debugger.IsAttached && winApplication.CheckCompatibilityType == CheckCompatibilityType.DatabaseSchema) {
                 winApplication.DatabaseUpdateMode = DatabaseUpdateMode.UpdateDatabaseAlways;
             }
 #endif

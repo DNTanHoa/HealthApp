@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace HealthAppDatabase.Module.BusinessObjects
 {
-    [Persistent("Post")]
+    [Persistent("PostContent")]
     [DefaultClassOptions]
     [XafDisplayName("Nội Dung Bài")]
     [XafDefaultProperty(nameof(title))]
@@ -20,6 +20,15 @@ namespace HealthAppDatabase.Module.BusinessObjects
         public override void AfterConstruction()
         {
             base.AfterConstruction();
+        }
+
+        private int _Oid;
+        [Key(true)]
+        [XafDisplayName("STT")]
+        public int Oid
+        {
+            get => _Oid;
+            set => SetPropertyValue(nameof(Oid), ref _Oid, value);
         }
 
         private string _title;

@@ -42,5 +42,10 @@ namespace HealthAppDatabase.Module.BusinessObjects
             get => _note;
             set => SetPropertyValue(nameof(note), ref _note, value);
         }
+
+        [XafDisplayName("Bệnh Viện")]
+        [Association("Hospital-Region")]
+        public XPCollection<Hospitals> hospitals => GetCollection<Hospitals>(nameof(hospitals));
+
     }
 }

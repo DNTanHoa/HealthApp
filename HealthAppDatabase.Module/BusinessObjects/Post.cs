@@ -25,6 +25,15 @@ namespace HealthAppDatabase.Module.BusinessObjects
             set => SetPropertyValue(nameof(title), ref _title, value);
         }
 
+        private int _Oid;
+        [Key(true)]
+        [XafDisplayName("STT")]
+        public int Oid
+        {
+            get => _Oid;
+            set => SetPropertyValue(nameof(Oid), ref _Oid, value);
+        }
+
         private string _summary;
         [XafDisplayName("Tóm Tắt")]
         public string summary

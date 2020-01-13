@@ -33,6 +33,15 @@ namespace HealthAppDatabase.Module.BusinessObjects
             set => SetPropertyValue(nameof(address), ref _address, value);
         }
 
+        private Regions _region;
+        [XafDisplayName("Khu Vực")]
+        [Association("Hospital-Region")]
+        public Regions region
+        {
+            get => _region;
+            set => SetPropertyValue(nameof(region), ref _region, value);
+        }
+
         private string _phone;
         [XafDisplayName("Điện Thoại")]
         public string phone
