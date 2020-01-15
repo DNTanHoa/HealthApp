@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace HealthAppAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class UserController : ControllerBase
     {
